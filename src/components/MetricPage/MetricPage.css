@@ -1,0 +1,17 @@
+.Form {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 30px;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.Button {
+  grid-column: span 3;
+}
+
+.icon {
+  width: 25px;
+}
