@@ -33,13 +33,13 @@
 
 .LinkBTN::before {
   content: '';
-  background-image: url(../../../public/Icon/Telegram.svg);
-  background-size: contain;
+  display: inline-block;
   width: 20px;
   height: 20px;
-  display: inline-block;
   margin-inline-end: -5px;
   margin-block-start: 4px;
+  background-image: url(../../../public/Icon/Telegram.svg);
+  background-size: contain;
 }
 
 @media (max-width: 768px) {
