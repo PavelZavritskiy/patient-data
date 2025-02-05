@@ -8,6 +8,14 @@ import 'dayjs/locale/ru';
 import { ReactComponent as HighTemp } from '../../assets/Icon/highTemp.svg';
 import { ReactComponent as LowTemp } from '../../assets/Icon/lowTemp.svg';
 import { ReactComponent as Diarrhea } from '../../assets/Icon/diarrhea.svg';
+import { ReactComponent as Nausea } from '../../assets/Icon/nausea.svg';
+
+enum MetricTags {
+  HighTemp = 'highTemp',
+  LowTemp = 'lowTemp',
+  Diarrhea = 'diarrhea',
+  Nausea = 'nausea',
+}
 
 const metrics = [
   'Высокая температура',
@@ -25,23 +33,16 @@ const metricOptions: SelectProps['options'] = metrics.map((metric) => ({
 
 interface DataType {
   key: string;
-  name: string;
-  age: number;
   address: string;
   tags: string[];
 }
 
 const columns: TableProps<DataType>['columns'] = [
   {
-    title: 'Имя ребёнка',
-    dataIndex: 'name',
-    key: 'name',
+    title: 'Дата',
+    dataIndex: 'address',
+    key: 'address',
     render: (text) => <a>{text}</a>,
-  },
-  {
-    title: 'Возраст',
-    dataIndex: 'age',
-    key: 'age',
   },
   {
     title: 'Показатели',
@@ -49,16 +50,20 @@ const columns: TableProps<DataType>['columns'] = [
     dataIndex: 'tags',
     filters: [
       {
-        text: 'Nice',
-        value: 'nice',
+        text: 'Высокая температура',
+        value: 'highTemp',
       },
       {
-        text: 'Developer',
-        value: 'developer',
+        text: 'Низкая температура',
+        value: 'lowTemp',
       },
       {
-        text: 'Loser',
-        value: 'loser',
+        text: 'Тошнота',
+        value: 'nausea',
+      },
+      {
+        text: 'Диарея',
+        value: 'diarrhea',
       },
     ],
     onFilter: (value, record) => record.tags.includes(value as string), // Фильтрация по значению
@@ -67,14 +72,17 @@ const columns: TableProps<DataType>['columns'] = [
         {tags.map((tag) => {
           let icon = null;
           switch (tag) {
-            case 'nice':
+            case 'highTemp':
               icon = <HighTemp className='icon'/>;
               break;
-            case 'developer':
+            case 'lowTemp':
               icon = <LowTemp className='icon'/>;
               break;
-            case 'loser':
+            case 'diarrhea':
               icon = <Diarrhea className='icon'/>;
+              break;
+            case 'nausea':
+              icon = <Nausea className='icon'/>;
               break;
             default:
               icon = null;
@@ -89,85 +97,68 @@ const columns: TableProps<DataType>['columns'] = [
       </>
     ),
   },
-  {
-    title: 'Дата',
-    dataIndex: 'address',
-    key: 'address',
-  },
 ];
 
 const data: DataType[] = [
   {
     key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer', 'nice', 'developer', 'loser', 'loser', 'loser',],
+    address: '2025-02-01',
+    tags: [MetricTags.HighTemp, MetricTags.LowTemp, MetricTags.HighTemp, MetricTags.LowTemp, MetricTags.Diarrhea],
   },
   {
     key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    address: '2025-02-02',
+    tags: [MetricTags.Diarrhea],
   },
   {
     key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+    address: '2025-02-03',
+    tags: [MetricTags.LowTemp, MetricTags.HighTemp],
   },
     {
     key: '4',
-    name: 'Greg Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    address: '2025-02-04',
+    tags: [MetricTags.LowTemp, MetricTags.Diarrhea],
   },
   {
     key: '5',
-    name: 'Ron Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    address: '2025-02-05',
+    tags: [MetricTags.Diarrhea, MetricTags.Nausea],
   },
   {
     key: '6',
-    name: 'Tomi Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+    address: '2025-02-06',
+    tags: [MetricTags.HighTemp, MetricTags.LowTemp],
   },
     {
     key: '7',
-    name: 'Adolf Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer', 'loser'],
+    address: '2025-02-07',
+    tags: [MetricTags.Diarrhea, MetricTags.Diarrhea, MetricTags.HighTemp],
   },
   {
     key: '8',
-    name: 'Jon Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    address: '2025-02-08',
+    tags: [MetricTags.HighTemp, MetricTags.Nausea],
   },
   {
     key: '9',
-    name: 'Peter Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  }
+    address: '2025-02-09',
+    tags: [MetricTags.HighTemp, MetricTags.Diarrhea, ],
+  },
+  {
+    key: '10',
+    address: '2025-02-10',
+    tags: [MetricTags.HighTemp, MetricTags.Diarrhea],
+  },
 ]
 
 
 function MetricPage(): JSX.Element {
+
   return (
     <ConfigProvider locale={ruRU}>
       <div className="MetricContainer">
-        <form className="Form">
+        <form className="FormMetric">
           <DatePicker />
           <DatePicker />
           <Select
@@ -186,6 +177,7 @@ function MetricPage(): JSX.Element {
           bordered={true}
           columns={columns} 
           dataSource={data}
+          pagination={{ pageSize: 10 }}
         />
       </div>
     </ConfigProvider>

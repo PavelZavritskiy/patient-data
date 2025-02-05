@@ -29,7 +29,7 @@ function LoginPage(): JSX.Element {
 
   return (
     <div className="FormContainer">
-      <Form className="Form">
+      <Form className="FormLogin">
         <Title>Добро пожаловать</Title>
         <Form.Item<FieldType>
           name="username"
