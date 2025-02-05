@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/patient-data/static/css/main.615f7093.css",
-    "main.js": "/patient-data/static/js/main.989612d9.js",
+    "main.js": "/patient-data/static/js/main.5500392b.js",
     "static/media/nausea.svg": "/patient-data/static/media/nausea.08647ac6148fe99bd962ac414163a0b9.svg",
     "static/media/diarrhea.svg": "/patient-data/static/media/diarrhea.6cb8831f4ee146c0e81fd1a37c27e365.svg",
     "static/media/highTemp.svg": "/patient-data/static/media/highTemp.dbdfa45f01245fbc612a024e2af05e4d.svg",
@@ -9,10 +9,10 @@
     "index.html": "/patient-data/index.html",
     "static/media/Telegram.svg": "/patient-data/static/media/Telegram.4c3e38d8df62a37c5e3f.svg",
     "main.615f7093.css.map": "/patient-data/static/css/main.615f7093.css.map",
-    "main.989612d9.js.map": "/patient-data/static/js/main.989612d9.js.map"
+    "main.5500392b.js.map": "/patient-data/static/js/main.5500392b.js.map"
   },
   "entrypoints": [
     "static/css/main.615f7093.css",
-    "static/js/main.989612d9.js"
+    "static/js/main.5500392b.js"
   ]
 }
