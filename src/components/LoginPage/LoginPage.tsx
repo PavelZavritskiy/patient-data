@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import './LoginPage.css';
 import { UserOutlined, KeyOutlined, EyeTwoTone, EyeInvisibleOutlined } from '@ant-design/icons';
 import { Input, Button, Typography, Form } from 'antd';
-import type { InputRef } from 'antd'; // Импортируем тип InputRef
+import type { InputRef } from 'antd';
 
 const { Title, Text } = Typography;
 

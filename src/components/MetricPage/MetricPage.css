@@ -1,3 +1,7 @@
+.MetricContainer {
+  padding-top: 60px;
+}
+
 .FormMetric {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
