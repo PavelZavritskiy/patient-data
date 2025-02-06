@@ -19,6 +19,9 @@ nav {
 
 nav ul {
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -35,8 +38,4 @@ nav ul li a {
 
 nav ul li a:hover {
   text-decoration: underline;
-}
-
-main {
-  padding-top: 60px;
 }
