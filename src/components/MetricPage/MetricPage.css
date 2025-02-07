@@ -1,21 +1,97 @@
-.MetricContainer {
+.metricContainer {
+  width: 385px;
   padding-top: 100px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.FormMetric {
+.formMetric {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
+
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr 1fr; 
+  }
 }
 
-.Button {
-  grid-column: span 3;
+.multiSelect {
+  grid-column: span 2;
+  @media (min-width: 800px) {
+    grid-column: span 1;
+  }
+}
+
+.ant-picker  {
+  width: clamp(10.3125rem, 9.8958rem + 1.6667vw, 10.9375rem);
+
+  @media (max-width: 400px) {
+    width: clamp(9.0625rem, 1.5625rem + 33.3333vw, 9.6875rem);
+  }
+}
+
+.buttonMetric {
+  grid-column: span 2;
+  @media (min-width: 800px) {
+    grid-column: span 3;
+  }
+}
+
+@media (hover: hover) {
+  .buttonMetric:where(.css-dev-only-do-not-override-cdzvx5).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+    background: #4096ff;
+    color: #fff;
+  }
+}
+
+@media (hover: none) {
+  .buttonMetric:where(.css-dev-only-do-not-override-cdzvx5).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+    background:#1677ff;
+    color: #fff;
+  }
+    .buttonMetric:where(.css-dev-only-do-not-override-cdzvx5).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):active {
+    background: #4096ff;
+    color: #fff;
+  }
+}
+
+
+.errorMessage {
+  color: red;
+  text-align: left;
+  grid-column: span 2;
 }
 
 .icon {
   width: 25px;
+}
+
+.ant-picker-input input,
+.ant-select-selection-search-input,
+.ant-input {
+  font-size: 16px !important;
+}
+
+
+html {
+  touch-action: manipulation;
+}
+
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: calc(7 * 25px + 6 * 8px); /* 7 иконок по 25px + 6 промежутков по 8px */
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
 }

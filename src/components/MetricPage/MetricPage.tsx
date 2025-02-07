@@ -74,6 +74,7 @@ function MetricPage(): JSX.Element {
   const [endDate, setEndDate] = useState<string | null>(null);
   const [selectedMetrics, setSelectedMetrics] = useState<string[]>([]);
   const [filteredData, setFilteredData] = useState<DataType[]>([]);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const showModal = (date: string) => {
     setSelectedDate(date);
@@ -93,10 +94,18 @@ function MetricPage(): JSX.Element {
   };
 
   const handleFilterData = () => {
-    const newFilteredData = data.filter((item) => {
-      const dateInRange =
-        (!startDate || item.address >= startDate) &&
-        (!endDate || item.address <= endDate);
+    if (!startDate && !endDate) {
+      setErrorMessage('Выберите интересующие вас даты!');
+      setFilteredData([]);
+      return;
+    }
+
+  setErrorMessage(null);
+
+  const newFilteredData = data.filter((item) => {
+    const dateInRange =
+      (!startDate || item.address >= startDate) &&
+      (!endDate || item.address <= endDate);
 
       const matchesMetrics =
         selectedMetrics.length === 0 ||
@@ -140,33 +149,33 @@ function MetricPage(): JSX.Element {
         },
       ],
       onFilter: (value, record) => record.tags.includes(value as string),
-      render: (_, { tags }) => (
-        <>
-          {tags.map((tag, index) => {
-            let icon = null;
-            switch (tag) {
-              case 'Высокая температура':
-                icon = <HighTemp className='icon' />;
-                break;
-              case 'Низкая температура':
-                icon = <LowTemp className='icon' />;
-                break;
-              case 'Диарея':
-                icon = <Diarrhea className='icon' />;
-                break;
-              case 'Тошнота':
-                icon = <Nausea className='icon' />;
-                break;
-              default:
-                icon = null;
-            }
-            return (
-              <span key={`${tag}-${index}`} style={{ marginRight: '8px' }}>
-                {icon}
-              </span>
-            );
-          })}
-        </>
+  render: (_, { tags }) => (
+    <div className="icon-container">
+      {tags.map((tag, index) => {
+        let icon = null;
+        switch (tag) {
+          case 'Высокая температура':
+            icon = <HighTemp className='icon' />;
+            break;
+          case 'Низкая температура':
+            icon = <LowTemp className='icon' />;
+            break;
+          case 'Диарея':
+            icon = <Diarrhea className='icon' />;
+            break;
+          case 'Тошнота':
+            icon = <Nausea className='icon' />;
+            break;
+          default:
+            icon = null;
+        }
+        return (
+          <span key={`${tag}-${index}`}>
+            {icon}
+          </span>
+        );
+      })}
+    </div>
       ),
     },
   ];
@@ -175,8 +184,8 @@ function MetricPage(): JSX.Element {
 
   return (
     <ConfigProvider locale={ruRU}>
-      <div className="MetricContainer">
-        <form className="FormMetric">
+      <div className="metricContainer">
+        <form className="formMetric">
           <DatePicker
             onChange={handleStartDateChange}
             placeholder="Начальная дата"
@@ -186,6 +195,7 @@ function MetricPage(): JSX.Element {
             placeholder="Конечная дата"
           />
           <Select
+            className='multiSelect'
             mode="multiple"
             placeholder="Показатели:"
             options={metricOptions}
@@ -193,9 +203,11 @@ function MetricPage(): JSX.Element {
             onChange={handleMetricsChange}
             maxTagCount={1}
             maxTagPlaceholder={(omittedValues) => `+${omittedValues.length}`}
-            style={{ width: '245px' }}
           />
-          <Button className="Button" type="primary" onClick={handleFilterData}>
+          {errorMessage && (
+            <span className='errorMessage'>{errorMessage}</span>
+          )}
+          <Button className="buttonMetric" type="primary" onClick={handleFilterData}>
             Показать
           </Button>
         </form>
