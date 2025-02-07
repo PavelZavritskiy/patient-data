@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/patient-data/static/css/main.aeb2270d.css",
-    "main.js": "/patient-data/static/js/main.c7cd2079.js",
+    "main.css": "/patient-data/static/css/main.f781f734.css",
+    "main.js": "/patient-data/static/js/main.61a842a4.js",
     "static/media/123.svg": "/patient-data/static/media/123.95f42508d9d528f4cbcb9dc7d50ba270.svg",
     "static/media/nausea.svg": "/patient-data/static/media/nausea.08647ac6148fe99bd962ac414163a0b9.svg",
     "static/media/diarrhea.svg": "/patient-data/static/media/diarrhea.6cb8831f4ee146c0e81fd1a37c27e365.svg",
@@ -9,11 +9,11 @@
     "static/media/lowTemp.svg": "/patient-data/static/media/lowTemp.4de935425d464b6e32055c7f9048382f.svg",
     "index.html": "/patient-data/index.html",
     "static/media/Telegram.svg": "/patient-data/static/media/Telegram.4c3e38d8df62a37c5e3f.svg",
-    "main.aeb2270d.css.map": "/patient-data/static/css/main.aeb2270d.css.map",
-    "main.c7cd2079.js.map": "/patient-data/static/js/main.c7cd2079.js.map"
+    "main.f781f734.css.map": "/patient-data/static/css/main.f781f734.css.map",
+    "main.61a842a4.js.map": "/patient-data/static/js/main.61a842a4.js.map"
   },
   "entrypoints": [
-    "static/css/main.aeb2270d.css",
-    "static/js/main.c7cd2079.js"
+    "static/css/main.f781f734.css",
+    "static/js/main.61a842a4.js"
   ]
 }
