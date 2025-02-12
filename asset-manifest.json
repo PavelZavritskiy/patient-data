@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.css": "/patient-data/static/css/main.e4ee1d38.css",
-    "main.js": "/patient-data/static/js/main.2e2b3680.js",
+    "main.css": "/patient-data/static/css/main.75d4ae47.css",
+    "main.js": "/patient-data/static/js/main.19109ce7.js",
     "static/media/123.svg": "/patient-data/static/media/123.95f42508d9d528f4cbcb9dc7d50ba270.svg",
-    "static/media/nausea.svg": "/patient-data/static/media/nausea.08647ac6148fe99bd962ac414163a0b9.svg",
-    "static/media/diarrhea.svg": "/patient-data/static/media/diarrhea.6cb8831f4ee146c0e81fd1a37c27e365.svg",
+    "static/media/conjunctivitis.svg": "/patient-data/static/media/conjunctivitis.9583ba3c032edd14003eda72eb372fa0.svg",
+    "static/media/cough_wet.svg": "/patient-data/static/media/cough_wet.ce773da77d8a51a1495cf776a3ce2e42.svg",
+    "static/media/cough.svg": "/patient-data/static/media/cough.353092da19071ab9445ce27f0c48d631.svg",
     "static/media/highTemp.svg": "/patient-data/static/media/highTemp.dbdfa45f01245fbc612a024e2af05e4d.svg",
+    "static/media/runny_nose.svg": "/patient-data/static/media/runny_nose.80a7a07166e41ca785029d45a7de2ddd.svg",
+    "static/media/ear_pain.svg": "/patient-data/static/media/ear_pain.150b14f690780d79fee90e84e5748488.svg",
+    "static/media/cough_dry.svg": "/patient-data/static/media/cough_dry.74bc03eb1055cf5cbc3a2e5d5b5676c5.svg",
     "static/media/lowTemp.svg": "/patient-data/static/media/lowTemp.4de935425d464b6e32055c7f9048382f.svg",
     "index.html": "/patient-data/index.html",
     "static/media/Telegram.svg": "/patient-data/static/media/Telegram.4c3e38d8df62a37c5e3f.svg",
-    "main.e4ee1d38.css.map": "/patient-data/static/css/main.e4ee1d38.css.map",
-    "main.2e2b3680.js.map": "/patient-data/static/js/main.2e2b3680.js.map"
+    "main.75d4ae47.css.map": "/patient-data/static/css/main.75d4ae47.css.map",
+    "main.19109ce7.js.map": "/patient-data/static/js/main.19109ce7.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4ee1d38.css",
-    "static/js/main.2e2b3680.js"
+    "static/css/main.75d4ae47.css",
+    "static/js/main.19109ce7.js"
   ]
 }
