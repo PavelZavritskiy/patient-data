@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/patient-data/static/css/main.75d4ae47.css",
-    "main.js": "/patient-data/static/js/main.a45e144a.js",
+    "main.js": "/patient-data/static/js/main.e59f8a54.js",
     "static/media/123.svg": "/patient-data/static/media/123.95f42508d9d528f4cbcb9dc7d50ba270.svg",
     "static/media/conjunctivitis.svg": "/patient-data/static/media/conjunctivitis.9583ba3c032edd14003eda72eb372fa0.svg",
     "static/media/cough_wet.svg": "/patient-data/static/media/cough_wet.ce773da77d8a51a1495cf776a3ce2e42.svg",
@@ -14,10 +14,10 @@
     "index.html": "/patient-data/index.html",
     "static/media/Telegram.svg": "/patient-data/static/media/Telegram.4c3e38d8df62a37c5e3f.svg",
     "main.75d4ae47.css.map": "/patient-data/static/css/main.75d4ae47.css.map",
-    "main.a45e144a.js.map": "/patient-data/static/js/main.a45e144a.js.map"
+    "main.e59f8a54.js.map": "/patient-data/static/js/main.e59f8a54.js.map"
   },
   "entrypoints": [
     "static/css/main.75d4ae47.css",
-    "static/js/main.a45e144a.js"
+    "static/js/main.e59f8a54.js"
   ]
 }
