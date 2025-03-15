@@ -140,7 +140,7 @@ function MetricPage(): JSX.Element {
           value: 'Низкая температура',
         },
         {
-          text: 'Тошнота',
+          text: 'Тошно12та',
           value: 'Тошнота',
         },
         {
